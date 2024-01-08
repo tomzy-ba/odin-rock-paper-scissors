@@ -32,6 +32,11 @@ function gameOn(playerSelection, computerSelection) {
         return winmsg
     }
 
-    console.log()
+    else {
+        return losemsg
+    }
+
 
 }
+
+console.log(gameOn())
