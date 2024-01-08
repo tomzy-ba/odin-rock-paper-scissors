@@ -23,24 +23,42 @@ function getComputerChoice() {
 const winmsg = "you win! well done!"
 const losemsg = "you lost! unlucky!"
 const drawmsg = "it's a draw!"
-
+let score = 0;
 
 function gameOn(playerSelection, computerSelection) {
+    playerSelection = prompt("rock, paper, or scissors?");
+    computerSelection = getComputerChoice();
     if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
-        return winmsg
+        score  + 1;
+        return winmsg;
     }
 
     else if (playerSelection == computerSelection) {
-        return(gameOn()) 
+        return gameOn(); 
     }
 
     else {
-        return losemsg
+        score - 1;
+        return losemsg;
     }
 
 
 }
-const playerSelection = "rock";
-const computerSelection = getComputerChoice()
 
-console.log(gameOn(playerSelection, computerSelection));
+for (let i = 0; i < 5; i++) {
+    let result = gameOn();
+    console.log(result)
+}
+
+const bigwin = "you won the big prize!"
+const biglose = "you are terrible!"
+
+
+
+if(score >= 0) {
+    console.log(bigwin)
+}
+else {
+    console.log(biglose
+        )
+} 
