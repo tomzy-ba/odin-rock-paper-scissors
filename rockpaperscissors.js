@@ -20,16 +20,19 @@ function getComputerChoice() {
 // so, I have the value of computerchoice, I know what the computer will choose
 // so I need to import that value into gameOn first, and then 
 // rock paper scissors define them
-
-const losemsg = "you lost! unlucky!"
 const winmsg = "you win! well done!"
+const losemsg = "you lost! unlucky!"
+const drawmsg = "it's a draw!"
 
 
 function gameOn(playerSelection, computerSelection) {
-    computerSelection = getComputerChoice()
-    playerSelection = prompt("select rock, paper, or scissors");
-    if(playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
+    playerSelection = ("select rock, paper, or scissors");
+    if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
         return winmsg
+    }
+
+    else if (playerSelection == computerSelection) {
+        return(gameOn()) 
     }
 
     else {
@@ -38,5 +41,7 @@ function gameOn(playerSelection, computerSelection) {
 
 
 }
+const playerSelection = "rock";
+const computerSelection = getComputerChoice()
 
 console.log(gameOn())
