@@ -26,7 +26,6 @@ const drawmsg = "it's a draw!"
 
 
 function gameOn(playerSelection, computerSelection) {
-    playerSelection = ("select rock, paper, or scissors");
     if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
         return winmsg
     }
@@ -44,4 +43,4 @@ function gameOn(playerSelection, computerSelection) {
 const playerSelection = "rock";
 const computerSelection = getComputerChoice()
 
-console.log(gameOn())
+console.log(gameOn(playerSelection, computerSelection));
