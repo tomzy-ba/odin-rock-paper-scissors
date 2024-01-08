@@ -4,16 +4,16 @@ function getComputerChoice() {
     let randomnum = Math.random()
     // if less than 1/3, log rock
     if (randomnum < 1/3) {
-        console.log("rock");
+        return ("rock");
     }
 
     else if (randomnum > 2/3) {
-        console.log("paper");
+        return ("paper");
     }
 
     else {
-        console.log("scissors");
+        return ("scissors");
     }
 }
 
-console.log(getComputerChoice)
+console.log(getComputerChoice())
