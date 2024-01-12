@@ -44,21 +44,3 @@ function gameOn(playerSelection, computerSelection) {
 
 
 }
-
-for (let i = 0; i < 5; i++) {
-    let result = gameOn();
-    console.log(result)
-}
-
-const bigwin = "you won the big prize!"
-const biglose = "you are terrible!"
-
-
-
-if(score >= 0) {
-    console.log(bigwin)
-}
-else {
-    console.log(biglose
-        )
-} 
