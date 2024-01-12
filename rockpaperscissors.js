@@ -25,7 +25,10 @@ const losemsg = "you lost! unlucky!"
 const drawmsg = "it's a draw!"
 let score = 0;
 
-function gameOn(playerSelection, computerSelection) {
+const buttons = document.querySelectorAll(".gamebuttons");
+buttons.forEach(addEventListener("click", gameOn))
+
+function gameOn() {
     playerSelection = prompt("rock, paper, or scissors?");
     computerSelection = getComputerChoice();
     if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
