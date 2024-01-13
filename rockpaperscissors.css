@@ -1,0 +1,28 @@
+body {
+    background-color: darkslategray;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+#gamelist {
+    display: flex;
+    list-style:none;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+#gamelist li {
+    display: flex;
+    flex-direction: column;
+}
+
+#gamelist img {
+    width: 230px;
+    height: 200px;
+    padding-bottom: 50px;
+}
+.gamebuttons {
+    width: 200px;
+}
