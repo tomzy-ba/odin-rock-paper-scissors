@@ -14,35 +14,42 @@ function getComputerChoice() {
     else {
         return ("scissors");
     }
-}
 
+}
 // if tie gameon()
 // so, I have the value of computerchoice, I know what the computer will choose
 // so I need to import that value into gameOn first, and then 
 // rock paper scissors define them
-const winmsg = "you win! well done!"
-const losemsg = "you lost! unlucky!"
-const drawmsg = "it's a draw!"
+const winmsg = "you win! well done!";
+const losemsg = "you lost! unlucky!";
+const drawmsg = "it's a draw!";
+
 let score = 0;
 
-const buttons = document.querySelectorAll(".gamebuttons");
-buttons.forEach(addEventListener("click", gameOn))
+const button1 = document.querySelector("#gamebutton1");
+const button2 = document.querySelector("#gamebutton2");
+const button3 = document.querySelector("#gamebutton3");
+
+button1.addEventListener("click", gameOn)
+button2.addEventListener("click", gameOn)
+button3.addEventListener("click", gameOn)
+
 
 function gameOn() {
-    playerSelection = prompt("rock, paper, or scissors?");
-    computerSelection = getComputerChoice();
-    if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
-        score  + 1;
-        return winmsg;
+    let playerSelection = this.innerText;
+    let computerSelection = getComputerChoice();
+
+
+    if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection  == "scissors" && computerSelection == "paper")  {
+        console.log(winmsg)  
     }
 
     else if (playerSelection == computerSelection) {
-        return gameOn(); 
+        console.log(drawmsg) 
     }
 
     else {
-        score - 1;
-        return losemsg;
+        console.log(losemsg)
     }
 
 
