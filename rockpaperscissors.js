@@ -24,7 +24,12 @@ const winmsg = "you win! well done!";
 const losemsg = "you lost! unlucky!";
 const drawmsg = "it's a draw!";
 
-let score = 0;
+let playerscore = 0;
+
+let documentPlayerScore = document.querySelector("#playerscore");
+
+let computerScore = 0;
+let documentComputerScore = document.querySelector("#computerscore");
 
 const button1 = document.querySelector("#gamebutton1");
 const button2 = document.querySelector("#gamebutton2");
@@ -41,6 +46,7 @@ function gameOn() {
 
 
     if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection  == "scissors" && computerSelection == "paper")  {
+        playerscore ++;
         console.log(winmsg)  
     }
 
@@ -49,8 +55,11 @@ function gameOn() {
     }
 
     else {
+        computerScore ++;
         console.log(losemsg)
     }
 
+    documentPlayerScore.textContent = playerscore;
+    documentComputerScore.textContent = computerScore;
 
 }
